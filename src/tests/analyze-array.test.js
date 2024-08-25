@@ -1,33 +1,29 @@
 import analyzeArray from "../analyze-array";
 
-const baseArray = [15, 10, 5];
+const baseArray = [5, 10, 15];
 
 test("average", () => {
-    expect(analyzeArray(baseArray).average).toBe("10")
+    expect(analyzeArray(baseArray).average).toBe(10)
 })
 
 test("min", () => {
-    expect(analyzeArray(baseArray).min).toBe("5")
+    expect(analyzeArray(baseArray).min).toBe(5)
 })
 
 test("max", () => {
-    expect(analyzeArray(baseArray).max).toBe("15")
+    expect(analyzeArray(baseArray).max).toBe(15)
 })
 
 test("length", () => {
-    expect(analyzeArray(baseArray).average).toBe("3")
+    expect(analyzeArray(baseArray).length).toBe(3)
 })
 
 test("not array", () => {
     expect(() => analyzeArray("fish")).toThrow();
 })
 
-test("empty array length", () => {
-    expect(analyzeArray([]).length).toBe(0);
-})
-
-test("empty array average", () => {
-    expect(analyzeArray([]).average).toBeNull();
+test("empty array", () => {
+    expect(() => analyzeArray([])).toThrow();
 })
 
 test("array mixed type", () => {
